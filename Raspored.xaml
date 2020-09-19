@@ -1,0 +1,91 @@
+﻿<Window x:Class="WpfApp2.Raspored"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Raspored" Height="410" Width="810">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Button x:Name="btnRaspored" Grid.Column="1" Grid.Row="3" Content="Raspored" Margin="5" Background="#F0F0F0" BorderThickness="0" />
+        <Button x:Name="btnProvjere" Grid.Column="1" Grid.Row="5" Content="Provjere" Margin="5" Background="#F0F0F0" BorderThickness="0" Click="btnProvjere_Click" />
+        <Button x:Name="btnOcjene" Grid.Column="1" Grid.Row="7" Content="Ocjene" Margin="5" Background="#F0F0F0" BorderThickness="0" Click="btnOcjene_Click" />
+        <Button x:Name="btnOdjava" Grid.Column="1" Grid.Row="9" Content="Odjava" Margin="5" Background="#F0F0F0" BorderThickness="0"/>
+
+        <Border Grid.Column="1" Grid.Row="3" BorderThickness="1" BorderBrush="White" VerticalAlignment="Top"/>
+        <Border Grid.Column="1" Grid.Row="3" BorderThickness="1" BorderBrush="White" VerticalAlignment="Bottom"/>
+
+        <Border Grid.Column="1" Grid.Row="5" BorderThickness="1" BorderBrush="White" VerticalAlignment="Top"/>
+        <Border Grid.Column="1" Grid.Row="5" BorderThickness="1" BorderBrush="White" VerticalAlignment="Bottom"/>
+
+        <Image Source="./images/student.png" Width="60" Height="60" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"></Image>
+
+        <Border Grid.Column="1" Grid.Row="7" BorderThickness="1" BorderBrush="White" VerticalAlignment="Top"/>
+        <Border Grid.Column="1" Grid.Row="7" BorderThickness="1" BorderBrush="White" VerticalAlignment="Bottom"/>
+
+        <Border Grid.Column="1" Grid.Row="9" BorderThickness="1" BorderBrush="White" VerticalAlignment="Top"/>
+        <Border Grid.Column="1" Grid.Row="9" BorderThickness="1" BorderBrush="White" VerticalAlignment="Bottom"/>
+
+        <Label Grid.Row="3" Grid.Column="3" Margin="3" Content="Kolegij" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Name="cmbKolegij" Grid.Column="4" Grid.Row="3" Margin="3"  Height="25" VerticalAlignment="Center" SelectionChanged="cmbKolegij_SelectionChanged"/>
+
+        <Label Grid.Row="4" Grid.Column="3" Margin="3" Content="Oblik nastave" />
+        <ComboBox Name="cmbOblikNastave" Grid.Column="4" Grid.Row="4" Margin="3" Height="25" />
+
+        <Label Grid.Row="5" Grid.Column="3" Margin="3" Content="Datum od" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <DatePicker Name="dtpDatumOd" Grid.Column="4" Grid.Row="5" Margin="3" VerticalAlignment="Center" SelectedDateFormat="Long"/>
+
+        <Label Grid.Row="5" Grid.Column="5" Margin="3" Content="Datum do" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <DatePicker SelectedDateFormat="Long" Name="dtpDatumDo" Grid.Column="6" Grid.Row="5" Margin="3" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="6" Grid.Column="3" Margin="3" Content="Dvorana" VerticalAlignment="Center"/>
+        <ComboBox Name="cmbDvorana" Grid.Column="4" Grid.Row="6" Margin="3" Height="25"/>
+
+        <Label Grid.Row="7" Grid.Column="3" Margin="3" Content="Napomena" VerticalAlignment="Center" />
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="4" Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="3">
+            <TextBox x:Name="txtNapomena" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+        </Border>
+
+        <Button x:Name="btnSpremi" Grid.Column="6" Grid.Row="9" Margin="80, 5, 0, 5" Content="Spremi" Background="LightGreen" Click="btnSpremi_Click"/>
+
+        <Rectangle Grid.Column="1" Grid.Row="1" Grid.RowSpan="9" Panel.ZIndex="-1">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#F0F0F0" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBlock Text="Raspored" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="1" FontSize="18" FontWeight="DemiBold" />
+
+        <Border BorderThickness="0 0 0 1" BorderBrush="Red" Background="#F0F0F0" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="6" Panel.ZIndex="-1">
+            <Rectangle>
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#F0F0F0" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+    </Grid>
+</Window>
+
